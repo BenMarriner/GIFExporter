@@ -76,7 +76,7 @@ namespace GIFExporter
 
         private void chkboxLoopInfinitely_CheckedChanged(object sender, EventArgs e)
         {
-            FFMpeg.LoopInfinitely = chkboxLoopInfinitely.Checked;
+            FFMpeg.Configuration.LoopInfinitely = chkboxLoopInfinitely.Checked;
             lblLoopCount.Visible = !chkboxLoopInfinitely.Checked;
             txtboxLoopCount.Visible = !chkboxLoopInfinitely.Checked;
         }
@@ -93,7 +93,8 @@ namespace GIFExporter
 
         private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SettingsWindow().Show
+            Form preferencesForm = new PreferencesWindow();
+            preferencesForm.Show();
         }
     }
 }

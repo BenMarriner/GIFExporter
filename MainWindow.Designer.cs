@@ -43,6 +43,8 @@
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblOutputName = new System.Windows.Forms.Label();
+            this.txtboxOutputName = new System.Windows.Forms.TextBox();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             // chkboxLoop
             // 
             this.chkboxLoop.AutoSize = true;
-            this.chkboxLoop.Location = new System.Drawing.Point(318, 46);
+            this.chkboxLoop.Location = new System.Drawing.Point(319, 98);
             this.chkboxLoop.Name = "chkboxLoop";
             this.chkboxLoop.Size = new System.Drawing.Size(53, 19);
             this.chkboxLoop.TabIndex = 1;
@@ -70,7 +72,7 @@
             // chkboxLoopInfinitely
             // 
             this.chkboxLoopInfinitely.AutoSize = true;
-            this.chkboxLoopInfinitely.Location = new System.Drawing.Point(318, 71);
+            this.chkboxLoopInfinitely.Location = new System.Drawing.Point(319, 123);
             this.chkboxLoopInfinitely.Name = "chkboxLoopInfinitely";
             this.chkboxLoopInfinitely.Size = new System.Drawing.Size(102, 19);
             this.chkboxLoopInfinitely.TabIndex = 2;
@@ -119,7 +121,7 @@
             // 
             // txtboxLoopCount
             // 
-            this.txtboxLoopCount.Location = new System.Drawing.Point(318, 123);
+            this.txtboxLoopCount.Location = new System.Drawing.Point(319, 176);
             this.txtboxLoopCount.Name = "txtboxLoopCount";
             this.txtboxLoopCount.Size = new System.Drawing.Size(100, 23);
             this.txtboxLoopCount.TabIndex = 8;
@@ -127,7 +129,7 @@
             // lblLoopCount
             // 
             this.lblLoopCount.AutoSize = true;
-            this.lblLoopCount.Location = new System.Drawing.Point(318, 105);
+            this.lblLoopCount.Location = new System.Drawing.Point(319, 158);
             this.lblLoopCount.Name = "lblLoopCount";
             this.lblLoopCount.Size = new System.Drawing.Size(100, 15);
             this.lblLoopCount.TabIndex = 9;
@@ -160,21 +162,37 @@
             // preferencesToolStripMenuItem
             // 
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(132, 6);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
+            // lblOutputName
+            // 
+            this.lblOutputName.AutoSize = true;
+            this.lblOutputName.Location = new System.Drawing.Point(319, 43);
+            this.lblOutputName.Name = "lblOutputName";
+            this.lblOutputName.Size = new System.Drawing.Size(39, 15);
+            this.lblOutputName.TabIndex = 11;
+            this.lblOutputName.Text = "Name";
+            // 
+            // txtboxOutputName
+            // 
+            this.txtboxOutputName.Location = new System.Drawing.Point(318, 61);
+            this.txtboxOutputName.Name = "txtboxOutputName";
+            this.txtboxOutputName.Size = new System.Drawing.Size(100, 23);
+            this.txtboxOutputName.TabIndex = 12;
             // 
             // MainWindow
             // 
@@ -182,6 +200,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(624, 461);
+            this.Controls.Add(this.txtboxOutputName);
+            this.Controls.Add(this.lblOutputName);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.lblLoopCount);
             this.Controls.Add(this.txtboxLoopCount);
@@ -219,6 +239,8 @@
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.Label lblOutputName;
+        private System.Windows.Forms.TextBox txtboxOutputName;
     }
 }
 
