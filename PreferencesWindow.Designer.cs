@@ -36,6 +36,9 @@ namespace GIFExporter
             this.btnSave = new System.Windows.Forms.Button();
             this.btnProgramBrowse = new System.Windows.Forms.Button();
             this.btnOutputDirectoryBrowse = new System.Windows.Forms.Button();
+            this.btnImportDirectoryBrowse = new System.Windows.Forms.Button();
+            this.lblImportDirectory = new System.Windows.Forms.Label();
+            this.txtboxImportDirectory = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtboxProgramPath
@@ -58,7 +61,7 @@ namespace GIFExporter
             // lblOutputDirectory
             // 
             this.lblOutputDirectory.AutoSize = true;
-            this.lblOutputDirectory.Location = new System.Drawing.Point(12, 53);
+            this.lblOutputDirectory.Location = new System.Drawing.Point(12, 97);
             this.lblOutputDirectory.Name = "lblOutputDirectory";
             this.lblOutputDirectory.Size = new System.Drawing.Size(81, 15);
             this.lblOutputDirectory.TabIndex = 3;
@@ -67,14 +70,14 @@ namespace GIFExporter
             // 
             // txtboxOutputDirectory
             // 
-            this.txtboxOutputDirectory.Location = new System.Drawing.Point(12, 71);
+            this.txtboxOutputDirectory.Location = new System.Drawing.Point(12, 115);
             this.txtboxOutputDirectory.Name = "txtboxOutputDirectory";
             this.txtboxOutputDirectory.Size = new System.Drawing.Size(229, 23);
             this.txtboxOutputDirectory.TabIndex = 2;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(252, 111);
+            this.btnSave.Location = new System.Drawing.Point(252, 160);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -94,7 +97,7 @@ namespace GIFExporter
             // 
             // btnOutputDirectoryBrowse
             // 
-            this.btnOutputDirectoryBrowse.Location = new System.Drawing.Point(252, 71);
+            this.btnOutputDirectoryBrowse.Location = new System.Drawing.Point(252, 115);
             this.btnOutputDirectoryBrowse.Name = "btnOutputDirectoryBrowse";
             this.btnOutputDirectoryBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnOutputDirectoryBrowse.TabIndex = 6;
@@ -102,11 +105,41 @@ namespace GIFExporter
             this.btnOutputDirectoryBrowse.UseVisualStyleBackColor = true;
             this.btnOutputDirectoryBrowse.Click += new System.EventHandler(this.btnOutputDirectoryBrowse_Click);
             // 
+            // btnImportDirectoryBrowse
+            // 
+            this.btnImportDirectoryBrowse.Location = new System.Drawing.Point(252, 71);
+            this.btnImportDirectoryBrowse.Name = "btnImportDirectoryBrowse";
+            this.btnImportDirectoryBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnImportDirectoryBrowse.TabIndex = 9;
+            this.btnImportDirectoryBrowse.Text = "Browse";
+            this.btnImportDirectoryBrowse.UseVisualStyleBackColor = true;
+            this.btnImportDirectoryBrowse.Click += new System.EventHandler(this.btnImportDirectoryBrowse_Click);
+            // 
+            // lblImportDirectory
+            // 
+            this.lblImportDirectory.AutoSize = true;
+            this.lblImportDirectory.Location = new System.Drawing.Point(12, 53);
+            this.lblImportDirectory.Name = "lblImportDirectory";
+            this.lblImportDirectory.Size = new System.Drawing.Size(120, 15);
+            this.lblImportDirectory.TabIndex = 8;
+            this.lblImportDirectory.Text = "Default Import Folder";
+            this.lblImportDirectory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtboxImportDirectory
+            // 
+            this.txtboxImportDirectory.Location = new System.Drawing.Point(12, 71);
+            this.txtboxImportDirectory.Name = "txtboxImportDirectory";
+            this.txtboxImportDirectory.Size = new System.Drawing.Size(229, 23);
+            this.txtboxImportDirectory.TabIndex = 7;
+            // 
             // PreferencesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 146);
+            this.ClientSize = new System.Drawing.Size(339, 195);
+            this.Controls.Add(this.btnImportDirectoryBrowse);
+            this.Controls.Add(this.lblImportDirectory);
+            this.Controls.Add(this.txtboxImportDirectory);
             this.Controls.Add(this.btnOutputDirectoryBrowse);
             this.Controls.Add(this.btnProgramBrowse);
             this.Controls.Add(this.btnSave);
@@ -131,5 +164,8 @@ namespace GIFExporter
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnProgramBrowse;
         private System.Windows.Forms.Button btnOutputDirectoryBrowse;
+        private System.Windows.Forms.Button btnImportDirectoryBrowse;
+        private System.Windows.Forms.Label lblImportDirectory;
+        private System.Windows.Forms.TextBox txtboxImportDirectory;
     }
 }

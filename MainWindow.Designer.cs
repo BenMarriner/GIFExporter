@@ -45,23 +45,27 @@
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblOutputName = new System.Windows.Forms.Label();
             this.txtboxOutputName = new System.Windows.Forms.TextBox();
+            this.btnMoveTop = new System.Windows.Forms.Button();
+            this.btnMoveUp = new System.Windows.Forms.Button();
+            this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnMoveBottom = new System.Windows.Forms.Button();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // listboxFrames
             // 
+            this.listboxFrames.AllowDrop = true;
             this.listboxFrames.FormattingEnabled = true;
             this.listboxFrames.ItemHeight = 15;
             this.listboxFrames.Location = new System.Drawing.Point(12, 43);
             this.listboxFrames.Name = "listboxFrames";
-            this.listboxFrames.Size = new System.Drawing.Size(300, 364);
+            this.listboxFrames.Size = new System.Drawing.Size(494, 364);
             this.listboxFrames.TabIndex = 0;
-            this.listboxFrames.SelectedIndexChanged += new System.EventHandler(this.listboxFrames_SelectedIndexChanged);
             // 
             // chkboxLoop
             // 
             this.chkboxLoop.AutoSize = true;
-            this.chkboxLoop.Location = new System.Drawing.Point(319, 98);
+            this.chkboxLoop.Location = new System.Drawing.Point(512, 306);
             this.chkboxLoop.Name = "chkboxLoop";
             this.chkboxLoop.Size = new System.Drawing.Size(53, 19);
             this.chkboxLoop.TabIndex = 1;
@@ -72,7 +76,7 @@
             // chkboxLoopInfinitely
             // 
             this.chkboxLoopInfinitely.AutoSize = true;
-            this.chkboxLoopInfinitely.Location = new System.Drawing.Point(319, 123);
+            this.chkboxLoopInfinitely.Location = new System.Drawing.Point(512, 331);
             this.chkboxLoopInfinitely.Name = "chkboxLoopInfinitely";
             this.chkboxLoopInfinitely.Size = new System.Drawing.Size(102, 19);
             this.chkboxLoopInfinitely.TabIndex = 2;
@@ -82,10 +86,10 @@
             // 
             // btnExport
             // 
-            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExport.Location = new System.Drawing.Point(495, 383);
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExport.Location = new System.Drawing.Point(537, 426);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(117, 66);
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -106,30 +110,32 @@
             this.lblFrames.AutoSize = true;
             this.lblFrames.Location = new System.Drawing.Point(12, 25);
             this.lblFrames.Name = "lblFrames";
-            this.lblFrames.Size = new System.Drawing.Size(45, 15);
+            this.lblFrames.Size = new System.Drawing.Size(42, 15);
             this.lblFrames.TabIndex = 6;
-            this.lblFrames.Text = "Frames";
+            this.lblFrames.Text = "Videos";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(237, 413);
+            this.btnDelete.Location = new System.Drawing.Point(431, 413);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtboxLoopCount
             // 
-            this.txtboxLoopCount.Location = new System.Drawing.Point(319, 176);
+            this.txtboxLoopCount.Location = new System.Drawing.Point(512, 384);
             this.txtboxLoopCount.Name = "txtboxLoopCount";
             this.txtboxLoopCount.Size = new System.Drawing.Size(100, 23);
             this.txtboxLoopCount.TabIndex = 8;
+            this.txtboxLoopCount.TextChanged += new System.EventHandler(this.txtboxLoopCount_TextChanged);
             // 
             // lblLoopCount
             // 
             this.lblLoopCount.AutoSize = true;
-            this.lblLoopCount.Location = new System.Drawing.Point(319, 158);
+            this.lblLoopCount.Location = new System.Drawing.Point(512, 366);
             this.lblLoopCount.Name = "lblLoopCount";
             this.lblLoopCount.Size = new System.Drawing.Size(100, 15);
             this.lblLoopCount.TabIndex = 9;
@@ -181,7 +187,7 @@
             // lblOutputName
             // 
             this.lblOutputName.AutoSize = true;
-            this.lblOutputName.Location = new System.Drawing.Point(319, 43);
+            this.lblOutputName.Location = new System.Drawing.Point(512, 251);
             this.lblOutputName.Name = "lblOutputName";
             this.lblOutputName.Size = new System.Drawing.Size(39, 15);
             this.lblOutputName.TabIndex = 11;
@@ -189,10 +195,51 @@
             // 
             // txtboxOutputName
             // 
-            this.txtboxOutputName.Location = new System.Drawing.Point(318, 61);
+            this.txtboxOutputName.Location = new System.Drawing.Point(511, 269);
             this.txtboxOutputName.Name = "txtboxOutputName";
             this.txtboxOutputName.Size = new System.Drawing.Size(100, 23);
             this.txtboxOutputName.TabIndex = 12;
+            this.txtboxOutputName.TextChanged += new System.EventHandler(this.txtboxOutputName_TextChanged);
+            // 
+            // btnMoveTop
+            // 
+            this.btnMoveTop.Location = new System.Drawing.Point(512, 42);
+            this.btnMoveTop.Name = "btnMoveTop";
+            this.btnMoveTop.Size = new System.Drawing.Size(94, 23);
+            this.btnMoveTop.TabIndex = 13;
+            this.btnMoveTop.Text = "Move to Top";
+            this.btnMoveTop.UseVisualStyleBackColor = true;
+            this.btnMoveTop.Click += new System.EventHandler(this.btnMoveTop_Click);
+            // 
+            // btnMoveUp
+            // 
+            this.btnMoveUp.Location = new System.Drawing.Point(512, 71);
+            this.btnMoveUp.Name = "btnMoveUp";
+            this.btnMoveUp.Size = new System.Drawing.Size(94, 23);
+            this.btnMoveUp.TabIndex = 14;
+            this.btnMoveUp.Text = "Move Up";
+            this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
+            // 
+            // btnMoveDown
+            // 
+            this.btnMoveDown.Location = new System.Drawing.Point(512, 100);
+            this.btnMoveDown.Name = "btnMoveDown";
+            this.btnMoveDown.Size = new System.Drawing.Size(94, 23);
+            this.btnMoveDown.TabIndex = 15;
+            this.btnMoveDown.Text = "Move Down";
+            this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
+            // 
+            // btnMoveBottom
+            // 
+            this.btnMoveBottom.Location = new System.Drawing.Point(512, 129);
+            this.btnMoveBottom.Name = "btnMoveBottom";
+            this.btnMoveBottom.Size = new System.Drawing.Size(108, 23);
+            this.btnMoveBottom.TabIndex = 16;
+            this.btnMoveBottom.Text = "Move to Bottom";
+            this.btnMoveBottom.UseVisualStyleBackColor = true;
+            this.btnMoveBottom.Click += new System.EventHandler(this.btnMoveBottom_Click);
             // 
             // MainWindow
             // 
@@ -200,6 +247,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(624, 461);
+            this.Controls.Add(this.btnMoveBottom);
+            this.Controls.Add(this.btnMoveDown);
+            this.Controls.Add(this.btnMoveUp);
+            this.Controls.Add(this.btnMoveTop);
             this.Controls.Add(this.txtboxOutputName);
             this.Controls.Add(this.lblOutputName);
             this.Controls.Add(this.toolStrip);
@@ -241,6 +292,10 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Label lblOutputName;
         private System.Windows.Forms.TextBox txtboxOutputName;
+        private System.Windows.Forms.Button btnMoveTop;
+        private System.Windows.Forms.Button btnMoveUp;
+        private System.Windows.Forms.Button btnMoveDown;
+        private System.Windows.Forms.Button btnMoveBottom;
     }
 }
 

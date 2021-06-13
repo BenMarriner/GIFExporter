@@ -12,6 +12,7 @@ namespace GIFExporter
     {
         private static String _configFileLocation = $"{Environment.CurrentDirectory}\\Preferences.json";
         public String ProgramPath { get; set; }
+        public String InputFileDirectory { get; set; }
         public String OutputFileDirectory { get; set; }
         public String OutputFileName { get; set; }
         public bool Loop { get; set; }
